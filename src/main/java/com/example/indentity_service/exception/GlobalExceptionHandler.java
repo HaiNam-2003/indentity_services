@@ -12,6 +12,7 @@ import java.util.Objects;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
+    @SuppressWarnings("rawtypes")
     @ExceptionHandler(value = RuntimeException.class)
     ResponseEntity<ApiResponse> handlingRuntimeException(RuntimeException exception) {
         ApiResponse apiResponse = new ApiResponse();
@@ -21,6 +22,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest().body(apiResponse);
     }
 
+    @SuppressWarnings("rawtypes")
     @ExceptionHandler(value = AppException.class)
     ResponseEntity<ApiResponse> handlingAppException(AppException exception) {
         ErrorCode errorCode = exception.getErrorCode();
@@ -31,6 +33,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest().body(apiResponse);
     }
 
+    @SuppressWarnings({ "rawtypes", "null" })
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
     ResponseEntity<ApiResponse> handlingValidation(MethodArgumentNotValidException exception) {
         ApiResponse apiResponse = new ApiResponse();

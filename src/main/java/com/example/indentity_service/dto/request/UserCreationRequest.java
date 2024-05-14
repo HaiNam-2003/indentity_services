@@ -1,11 +1,9 @@
 package com.example.indentity_service.dto.request;
 
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.aspectj.bridge.IMessage;
 
 import java.time.LocalDate;
 
