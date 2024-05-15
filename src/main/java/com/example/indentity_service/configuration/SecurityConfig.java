@@ -44,6 +44,7 @@ public class SecurityConfig {
                                 .decoder(jwtDecoder())
                                 .jwtAuthenticationConverter(jwtAuthenticationConverter())
                         )
+                        .authenticationEntryPoint(new JwtAuthenticationEntryPoint())
                 );
 
         return httpSecurity.build();
